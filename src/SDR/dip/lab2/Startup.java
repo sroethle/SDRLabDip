@@ -25,9 +25,17 @@ public class Startup {
  
     public static void main(String[] args) {
         
-        BaggageServiceTipCalculator service =
-                new BaggageServiceTipCalculator(
-                BaggageServiceTipCalculator.ServiceQuality.FAIR,5);
+        TipCalculatorStrategy service = new BaggageServiceTipStrategy(BaggageServiceTipStrategy.ServiceQuality.FAIR,5);
+        
+        //TipCalculatorStrategy service = new BaggageServiceTipCalculator();
+        
+        TipCalculatorService calculator = new TipCalculatorService(service);
+        
+        System.out.println(calculator.getTipCalculatorTip());
+        
+//        BaggageServiceTipStrategy service =
+//                new BaggageServiceTipStrategy(
+//                BaggageServiceTipStrategy.ServiceQuality.FAIR,5);
         
     }
 
