@@ -1,13 +1,24 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package SDR.dip.lab3;
+
+import java.io.PrintWriter;
 
 /**
  *
- * @author Scotty
+ * @author Scott Roethle
  */
-public class FileOutputStrategy {
+public class FileOutputStrategy implements OutputStrategy {
     
+        public void displayOutput(String outputMessage){
+            
+            try {
+                String fileName = "inputFile.txt";
+                PrintWriter outputFile = new PrintWriter(fileName);
+
+                outputFile.println(outputMessage);
+                outputFile.close();
+
+            } catch (Exception e) {
+                
+            }    
+    } 
 }
