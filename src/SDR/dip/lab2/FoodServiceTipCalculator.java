@@ -8,7 +8,7 @@ package SDR.dip.lab2;
  *
  * @author your name goes here
  */
-public class FoodServiceTipStrategy implements TipCalculatorStrategy {
+public class FoodServiceTipCalculator implements TipCalculatorStrategy {
     private static final double MIN_BILL = 0.00;
     private static final String BILL_ENTRY_ERR =
             "Error: bill must be greater than or equal to " + MIN_BILL;
@@ -22,7 +22,7 @@ public class FoodServiceTipStrategy implements TipCalculatorStrategy {
     }
     private ServiceQuality serviceQuality;
 
-    public FoodServiceTipStrategy(ServiceQuality q, double billAmt) {
+    public FoodServiceTipCalculator(ServiceQuality q, double billAmt) {
         this.setServiceRating(q);
         this.setBill(billAmt);
     }

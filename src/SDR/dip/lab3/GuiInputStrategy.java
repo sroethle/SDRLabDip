@@ -5,15 +5,15 @@ import javax.swing.JOptionPane;
  * @author Scott Roethle
  */
 public class GuiInputStrategy implements InputStrategy {
+    MessageStrategy message = new StringMessageStrategy();
 
     private String displayMessage = "Please enter your input string.";
     
 
-    public String getInput() {
-        String message = JOptionPane.showInputDialog(null, displayMessage);
+    @Override
+    public final MessageStrategy getInput() {
+        message.setMessage(JOptionPane.showInputDialog(null, displayMessage));
+       
         return message;
     }
-    
-    
-    
 }

@@ -6,10 +6,6 @@ package SDR.dip.lab3;
  */
 public interface InputStrategy {
     
-    
-    public abstract String getInput();
-    
-   
-    
+    public abstract MessageStrategy getInput();
     
 }

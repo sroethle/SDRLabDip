@@ -9,13 +9,13 @@ public class StartUp {
     public static void main(String[] args) {
         
         InputStrategy input = new GuiInputStrategy();
-        InputStrategy input2 = new FileInputStrategy();
+        InputStrategy input2 = new FileInputMessageStrategy();
         OutputStrategy output = new GuiOutputStrategy();
-        OutputStrategy output2 = new FileOutputStrategy();
+        OutputStrategy output2 = new FileOutputMessageStrategy();
         
-        MessageService messageService = new MessageService(input2, output);
+        MessageService messageService = new MessageService(input, output);
         
-        messageService.displayoutputString(messageService.getInputString());
+        messageService.outputMessage();
         
     }
     

@@ -7,8 +7,10 @@ import javax.swing.JOptionPane;
  */
 public class GuiOutputStrategy implements OutputStrategy {
     
-    public void displayOutput(String outputMessage){
-        JOptionPane.showMessageDialog(null,outputMessage);
+    @Override
+    public final void outputMessage(MessageStrategy message){
+        
+        JOptionPane.showMessageDialog(null,message.getMessage());
     }
     
 }

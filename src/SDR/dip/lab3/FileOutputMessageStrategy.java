@@ -6,15 +6,16 @@ import java.io.PrintWriter;
  *
  * @author Scott Roethle
  */
-public class FileOutputStrategy implements OutputStrategy {
+public class FileOutputMessageStrategy implements OutputStrategy {
     
-        public void displayOutput(String outputMessage){
+    @Override
+        public final void outputMessage(MessageStrategy message){
             
             try {
                 String fileName = "inputFile.txt";
                 PrintWriter outputFile = new PrintWriter(fileName);
 
-                outputFile.println(outputMessage);
+                outputFile.println(message.getMessage());
                 outputFile.close();
 
             } catch (Exception e) {

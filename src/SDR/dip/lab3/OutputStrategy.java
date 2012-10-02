@@ -6,7 +6,6 @@ package SDR.dip.lab3;
  */
 public interface OutputStrategy {
     
-    public abstract void displayOutput(String output);
-    
+    public abstract void outputMessage(MessageStrategy message);
     
 }

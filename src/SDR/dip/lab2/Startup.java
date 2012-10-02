@@ -25,14 +25,14 @@ public class Startup {
  
     public static void main(String[] args) {
         
-        TipCalculatorStrategy service = new FoodServiceTipStrategy(FoodServiceTipStrategy.ServiceQuality.FAIR,5);
-        TipCalculatorStrategy service2 = new BaggageServiceTipStrategy(BaggageServiceTipStrategy.ServiceQuality.FAIR,5);
+        TipCalculatorStrategy calc = new FoodServiceTipCalculator(FoodServiceTipCalculator.ServiceQuality.FAIR,5);
+        TipCalculatorStrategy calc2 = new BaggageServiceTipCalculator(BaggageServiceTipCalculator.ServiceQuality.FAIR,5);
         
-        TipCalculatorService calculator = new TipCalculatorService(service);
+        TipCalculatorService calculator = new TipCalculatorService(calc);
    
-        System.out.println(calculator.getTipCalculatorTip());
+        System.out.println(calculator.getTip());
         
-        
+         
     }
 
 }
